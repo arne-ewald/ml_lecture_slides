@@ -1,0 +1,89 @@
+\ProvidesPackage{NAK}
+
+\usepackage{graphicx}
+%\usepackage{ifthen}							% control flows
+\usepackage[absolute,overlay]{textpos}		% Elemente an eine präzise Position setzen
+\usepackage{color}							% to define colors
+\usepackage{eurosym}						% Euro symbol
+\usepackage{tabto}							% Tabulator
+\usepackage{nicefrac}						% nice fraction
+\usepackage{wasysym}
+
+\graphicspath{{img/}}
+
+\definecolor{NAKblue}{HTML}{03266B}
+
+% \usetikzlibrary{calc,positioning,arrows,shapes,
+% matrix,decorations.pathmorphing,patterns}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+
+%Counter für Aufgabennummern
+\newcounter{tasknr}
+\newcommand{\task}[2]{
+	\addtocounter{tasknr}{1}
+	\begin{frame}[t]{Aufgabe \thetasknr: #1} #2 \end{frame} }
+
+% \newboolean{mitLoesung}
+% \setboolean{mitLoesung}{false}
+
+\newcommand{\sol}[1]{
+	\ifthenelse{\boolean{mitLoesung}}{
+		\begin{frame}
+			\frametitle{Lösung Aufgabe \thetasknr}
+			#1
+		\end{frame}
+	}
+	{
+		\begin{frame}
+			\frametitle{Lösung Aufgabe \thetasknr}
+			\taskicon
+			\begin{tikzpicture}
+				\draw[step=4mm, line width=0.1mm, black!30!white] (0,0) grid (0.95\paperwidth,0.757\paperheight);
+			\end{tikzpicture}
+		\end{frame}
+	}
+}
+
+\newcommand{\taskicon}{%
+	\begin{textblock*}{10mm}(\textwidth-0.5cm,0.3cm)
+		\includegraphics[height=1.5cm]{Lampe}
+	\end{textblock*}
+}
+
+\newcommand{\newframe}[2]{
+	\begin{frame}
+		\frametitle{#1}
+		#2
+	\end{frame}
+}
+
+\newcommand{\bl}[2]{
+	\begin{block}{#1}
+		#2
+	\end{block}
+}
+
+\newcommand{\mini}[2]{
+	\begin{minipage}{#1\textwidth}
+		#2
+	\end{minipage}
+}
+
+\newcommand{\img}[2]{
+	\begin{minipage}{#1\textwidth}
+		\includegraphics[width=\textwidth]{#2}
+\end{minipage}}
+
+\newcommand{\pfeil}{
+	\includegraphics[width=2ex]{PfeilHand} \hspace{0.5ex}
+}
+
+\newcommand\undermat[2]{%
+	\makebox[0pt][l]{$\smash{\underbrace{\phantom{%
+					\begin{matrix}#2\end{matrix}}}_{\text{$#1$}}}$}#2}

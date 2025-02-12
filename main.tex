@@ -1,0 +1,58 @@
+\makeatletter
+% \def\input@path{{themes/}}
+\makeatother
+
+\documentclass[aspectratio=169]{beamer}
+\usepackage{beamer-utils}
+
+% \usepackage{NAK}
+% \usetheme{nak2022}
+
+\usepackage{beamerthemeSimplePlus}
+\usetheme{SimplePlus}
+
+\usepackage{graphicx} % For including images
+\usepackage{amsmath}  % For mathematical symbols
+\usepackage{amssymb}  % Additional symbols
+\usepackage{hyperref} % For clickable links
+\usepackage{ifthen}	  % control flows
+\usepackage{tikz}     % For drawing diagrams
+\usetikzlibrary{positioning, arrows.meta}
+
+\setbeamercovered{transparent}
+
+%%%%% Settings
+\setbeamerfont{title} {size=\LARGE}
+\newboolean{mitLoesung}
+\setboolean{mitLoesung}{true} % Für Studenten: false, für Dozenten: true
+%%%%%
+
+
+\begin{document}
+\graphicspath{{img/}{../includes/}} 
+
+% Title Page Information
+\title[Machine Learning Lecture - NORDAKADEMIE]{Machine Learning}
+% \subtitle{NORDAKADEMIE}
+\author[Prof.\ Dr.\ Arne\ Ewald]{Prof.\ Dr.\ Arne\ Ewald}
+% \date{\today}
+\date{Q3 - 2025}
+
+\titlegraphic{
+    \centering
+    \vspace{-5cm} % Adjust top placement
+    \includegraphics[width=8cm]{NAK_Logo.png} 
+    \vspace{0.5cm} % Space between logo and title
+}
+
+
+\titleframe{}
+
+% Slide: Outline
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\input{tex/introduction.tex}
+
+\end{document}

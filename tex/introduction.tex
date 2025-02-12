@@ -1,0 +1,107 @@
+%!TEX root = ../main.tex
+
+% Slide: Introduction to Machine Learning
+\section{Introduction to Machine Learning}
+\begin{frame}{What is Machine Learning?}
+    \begin{itemize}
+        \item Machine learning is the study of algorithms that improve automatically through experience.
+        \item Key applications include:
+        \begin{itemize}
+            \item Image recognition
+            \item Natural language processing
+            \item Predictive analytics
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide: Introduction to Machine Learning
+\begin{frame}{Supervised learning}
+    \begin{tikzpicture}[
+        node distance=1cm and 1.5cm,
+        box/.style={rounded corners, draw, fill=blue!20, minimum width=2.5cm, minimum height=1cm, align=center},
+        main/.style={rounded corners, draw, fill=red!60, text=white, font=\bfseries, minimum width=3cm, minimum height=1cm, align=center},
+        arrow/.style={thick, -{Latex[length=2mm, width=2mm]}, blue!70}
+    ]
+    
+    % Nodes
+    \node (data) [box] {Training data};
+    \node (labels) [box, left=of data] {Labels};
+    \node (algorithm) [main, below=of data] {Machine learning algorithm};
+    \node (model) [box, below=of algorithm] {Predictive model};
+    \node (newdata) [box, left=of model] {New data};
+    \node (prediction) [box, right=of model] {Predicted labels};
+    
+    % Arrows
+    \draw [arrow] (labels) -- (algorithm);
+    \draw [arrow] (data) -- (algorithm);
+    \draw [arrow] (algorithm) -- (model);
+    \draw [arrow] (newdata) -- (model);
+    \draw [arrow] (model) -- (prediction);
+    
+    \end{tikzpicture}
+\end{frame}
+
+% Slide 4: Types of Machine Learning
+\section{Types of Machine Learning}
+\begin{frame}{Types of Machine Learning}
+    \begin{itemize}
+        \item \textbf{Supervised Learning}
+        \begin{itemize}
+            \item Uses labeled data
+            \item Examples: Classification, Regression
+        \end{itemize}
+        \item \textbf{Unsupervised Learning}
+        \begin{itemize}
+            \item Uses unlabeled data
+            \item Examples: Clustering, Dimensionality Reduction
+        \end{itemize}
+        \item \textbf{Reinforcement Learning}
+        \begin{itemize}
+            \item Learning through rewards and penalties
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 5: Key Concepts
+\section{Key Concepts}
+\begin{frame}{Key Concepts in Machine Learning}
+    \begin{itemize}
+        \item \textbf{Training Data}: Dataset used to train the model.
+        \item \textbf{Test Data}: Dataset used to evaluate the model.
+        \item \textbf{Overfitting}: When a model learns noise instead of the signal.
+        \item \textbf{Regularization}: Techniques to prevent overfitting.
+    \end{itemize}
+\end{frame}
+
+% Slide 6: Supervised Learning Example
+\section{Supervised Learning Example}
+\begin{frame}{Supervised Learning: Linear Regression}
+    \begin{block}{Linear Regression}
+        Linear regression aims to model the relationship between a scalar response and one or more explanatory variables.
+        \[
+        y = \beta_0 + \beta_1 x + \epsilon
+        \]
+    \end{block}
+    \begin{itemize}
+        \item \textbf{Goal}: Minimize the error between predicted and actual values.
+        \item \textbf{Cost Function}: Mean Squared Error (MSE)
+    \end{itemize}
+\end{frame}
+
+% Slide 7: Visualization
+\section{Visualization}
+% \begin{frame}{Visualizing Data}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.7\textwidth]{example_plot.png}
+%         \caption{Sample visualization of data points with regression line}
+%     \end{figure}
+% \end{frame}
+
+% Slide 8: Questions
+\section{Questions}
+\begin{frame}{Questions?}
+    \begin{center}
+        \Large Any Questions?
+    \end{center}
+\end{frame}
